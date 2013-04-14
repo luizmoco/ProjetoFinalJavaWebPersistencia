@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 public class DocumentoAnual {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
 	private int codDocumento;
 	private String anoExercicio;
@@ -60,7 +60,13 @@ public class DocumentoAnual {
 	public void setDocumentoPago(String documentoPago) {
 		this.documentoPago = documentoPago;
 	}
-	
-	
-	
+	@Override
+	public String toString() {
+		return "DocumentoAnual [codigo=" + codigo + ", codDocumento="
+				+ codDocumento + ", anoExercicio=" + anoExercicio
+				+ ", valorPrevisto=" + valorPrevisto + ", valorPago="
+				+ valorPago + ", dataPagamento=" + dataPagamento
+				+ ", documentoPago=" + documentoPago + "]";
+	}
+
 }
